@@ -1,0 +1,459 @@
+/* ==========================================================================
+   Base styles
+   ========================================================================== */
+/*Font*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+body,
+button,
+input,
+select,
+textarea {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+}
+
+p,
+li {
+  font-size: 18px;
+}
+
+a {
+  color: white;
+}
+
+
+/* ==========================================================================
+   Preloader
+   ========================================================================== */
+.loading {
+  overflow: hidden;
+  height: 100vh;
+}
+
+form #website {
+  display: none;
+}
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background-color: #fafafa;
+}
+
+.preloader-circle {
+  position: fixed;
+  left: calc(50% - 25px);
+  top: calc(50% - 25px);
+  opacity: 0;
+  z-index: 21;
+  /*shape & color*/
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/*animations*/
+.preloader-circle:first-child {
+  -webkit-animation: loader 2s infinite;
+  animation: loader 2s infinite;
+}
+
+.preloader-circle:nth-child(2) {
+  -webkit-animation: loader 2s 1s infinite cubic-bezier(0, 0, 0.32, 1.08);
+  animation: loader 2s 1s infinite cubic-bezier(0, 0, 0.32, 1.08);
+}
+
+@-webkit-keyframes loader {
+  0% {
+    opacity: 1;
+    transform: scale(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+@keyframes loader {
+  0% {
+    opacity: 1;
+    transform: scale(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+header nav {
+  height: 0;
+  position: absolute;
+  z-index: 100;
+}
+
+@media only screen and (max-width:992px) {
+  header nav {
+    position: fixed !important;
+  }
+}
+
+header nav i {
+  text-shadow: 0 0 7px rgba(0, 0, 0, 0.6);
+  font-size: 31px !important;
+  transform: translateX(21px);
+}
+
+#nav-mobile {
+  padding-top: 5%;
+}
+
+#nav-mobile li {
+  text-align: center;
+}
+
+#nav-mobile h5 {
+  font-family: 'PT Serif', 'Source Sans Pro', sans-serif;
+  padding-bottom: 10%
+}
+
+#nav-mobile a {
+  font-size: 1.2rem;
+}
+
+.nav-wrapper {
+  color: #fafafa;
+}
+
+/* ==========================================================================
+   Body
+   ========================================================================== */
+
+/* hero */
+.hero {
+  height: 60vh;
+  /* fondo */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(/img/fondo-min.jpg);
+  /*para centering */
+  display: flex;
+}
+
+@media only screen and (max-width:650px) {
+  .hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(/img/fondo-mobile-min.jpg);
+  }
+
+}
+
+.hero .blur {
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  width: 100%;
+  display: flex;
+}
+
+.hero .container {
+  margin: auto;
+}
+
+
+.hero h1 {
+  margin: 0;
+  font-family: 'PT Serif', 'Source Sans Pro', sans-serif;
+}
+
+.hero h1 {
+  color: white;
+}
+
+.hero h5,
+.hero i {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+@media only screen and (max-width:600px) {
+  .hero h1 {
+    font-size: 4rem;
+  }
+}
+
+/* secciones */
+main {
+  background-color: #fafafa;
+}
+
+@media only screen and (min-width:901px) {
+
+  /* cambia el orden de los items */
+  #section-2 .row {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  /* centra los textos verticalmente */
+  .col.s12.m6.l6.valign-wrapper {
+    min-height: 430px;
+  }
+}
+
+
+/* overlays imágenes */
+.image-link {
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+  box-sizing: content-box;
+  /* arregla un bug en el que ocupa mas espacio vertical */
+  line-height: 0
+}
+
+.image-link .overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .3s ease;
+  background-color: rgba(0, 0, 0, 0.3);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+
+.image-link:hover .overlay {
+  opacity: 1;
+}
+
+.image-link .text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+
+/* section cv */
+
+#section-2 #cv .image-link {
+  max-width: 300px;
+}
+
+/* section 3 */
+
+#section-3 {
+  padding-bottom: 140px;
+}
+
+
+
+@media only screen and (min-width:901px) {
+  #section-3 .row {
+    display: flex;
+  }
+
+  #section-3 .col {
+    flex: 1;
+  }
+
+  #section-3 .col:first-child {
+    padding-right: 50px;
+  }
+
+  #section-3 .col:last-child {
+    padding-left: 50px;
+  }
+}
+
+@media only screen and (max-width:900px) {
+  #section-3 .col:last-child {
+    padding-top: 80px;
+  }
+}
+
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.page-footer {
+  background-color: #00141d;
+}
+
+/* footer items container */
+.page-footer {
+  padding-top: 0px;
+}
+
+.footer-items {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  max-width: 700px;
+}
+
+/* styles for medium and large screens */
+footer p,
+footer h5,
+footer ul {
+  margin: 0;
+  margin-bottom: .3rem;
+}
+
+.footer-items a {
+  font-size: 1.1rem;
+  color: white;
+}
+
+.footer-items ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-items li i {
+  font-size: 8px;
+  color: rgba(255, 255, 255, 0.2);
+}
+
+
+/* styles for small screens */
+@media only screen and (max-width:560px) {
+  .footer-items ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-items li {
+    padding-bottom: .4rem;
+  }
+
+  .footer-items a {
+    font-size: 1.3rem !important;
+  }
+
+  .footer-items li i {
+    display: none;
+  }
+}
+
+/* footer copyright */
+.footer-copyright {
+  background-color: rgba(0, 0, 0, 0.18) !important;
+}
+
+/* ==========================================================================
+   Cambios Materialize
+   ========================================================================== */
+
+
+
+.row {
+  margin-bottom: 0;
+}
+
+.section {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+@media only screen and (max-width:901px) {
+  .section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+
+.valign-wrapper {
+  flex-direction: column;
+  justify-content: center;
+}
+
+.responsive-img {
+  display: block;
+  margin: auto;
+}
+
+/* ==========================================================================
+   Página Desarrollo
+   ========================================================================== */
+
+.hero.secondary {
+  height: 30vh;
+}
+
+.hero.secondary i {
+  transform: translateY(5px);
+}
+
+#carousel-agrorrhh.carousel {
+  height: 500px !important;
+}
+
+#carousel-agrorrhh .carousel-item {
+  width: 500px !important;
+  height: 500px !important;
+}
+
+@media only screen and (max-width:600px) {
+  #carousel-agrorrhh.carousel {
+    height: 350px !important;
+  }
+
+  #carousel-agrorrhh .carousel-item {
+    width: 300px !important;
+    height: 300px !important;
+  }
+}
+
+#carousel-others .carousel-item {
+  width: 300px !important;
+  height: 300px !important;
+}
+
+video {
+  max-width: 100%;
+}
+
+#asesorrural .overlay {
+  width: 600px;
+  max-width: 100%;
+  margin: auto;
+}
+
+.carousel-item:not(.active) .overlay {
+  opacity: 0 !important;
+}
+
+/* ==========================================================================
+   Browser Fixes
+   ========================================================================== */
+/* Firefox */
+
+@-moz-document url-prefix() {
+  .hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(/img/fondo-firefox.jpg) !important;
+  }
+
+  .image-link .overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+}
