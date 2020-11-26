@@ -12,8 +12,11 @@ body,
 button,
 input,
 select,
-textarea {
-  font-family: 'Source Sans Pro', sans-serif;
+textarea,
+p,
+li,
+a {
+  font-family: 'Montserrat', sans-serif;
   font-weight: 400;
 }
 
@@ -26,6 +29,20 @@ a {
   color: white;
 }
 
+/*Color*/
+
+:root {
+  --accent-color: #de4343;
+  --accent-color-darker: #de4343;
+  --accent-color-lighter: #ff7171;
+  --secondary-color: #4c4e56;
+  --footer-color: #4c4e56;
+}
+
+::selection {
+  background: var(--accent-color-lighter);
+  /* WebKit/Blink Browsers */
+}
 
 /* ==========================================================================
    Preloader
@@ -46,7 +63,8 @@ form #website {
   width: 100%;
   height: 100%;
   z-index: 9999;
-  background-color: #fafafa;
+  background-color: var(--accent-color);
+  /* background-color: var(--secondary-color); */
 }
 
 .preloader-circle {
@@ -59,7 +77,9 @@ form #website {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: var(--accent-color-lighter);
+  /* background-color: var(--accent-color); */
+  /* background-color: var(--secondary-color); */
 }
 
 /*animations*/
@@ -127,7 +147,7 @@ header nav i {
 }
 
 #nav-mobile h5 {
-  font-family: 'PT Serif', 'Source Sans Pro', sans-serif;
+  /* font-family: 'PT Serif', 'Source Sans Pro', sans-serif; */
   padding-bottom: 10%
 }
 
@@ -139,34 +159,41 @@ header nav i {
   color: #fafafa;
 }
 
+.brand-logo img {
+  max-height: 70px;
+}
+
 /* ==========================================================================
-   Body
+   Hero
    ========================================================================== */
 
-/* hero */
 .hero {
-  height: 60vh;
+  height: 70vh;
   /* fondo */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(/img/fondo-min.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(/img/02.jpg);
   /*para centering */
   display: flex;
 }
 
 @media only screen and (max-width:650px) {
   .hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(/img/fondo-mobile-min.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(/img/02.jpg);
   }
-
 }
 
-.hero .blur {
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
+.hero>div {
+  /* -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px); */
   width: 100%;
   display: flex;
+}
+
+.hero>div.blur {
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
 }
 
 .hero .container {
@@ -176,11 +203,9 @@ header nav i {
 
 .hero h1 {
   margin: 0;
-  font-family: 'PT Serif', 'Source Sans Pro', sans-serif;
-}
-
-.hero h1 {
+  /* font-family: 'PT Serif', 'Source Sans Pro', sans-serif; */
   color: white;
+  font-size: 3rem;
 }
 
 .hero h5,
@@ -188,11 +213,21 @@ header nav i {
   color: rgba(255, 255, 255, 0.9);
 }
 
-@media only screen and (max-width:600px) {
-  .hero h1 {
-    font-size: 4rem;
+@media only screen and (min-width:600px) {
+  .hero .half-width {
+    max-width: 550px;
   }
 }
+
+@media only screen and (max-width:600px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+}
+
+/* ==========================================================================
+   Secciones
+   ========================================================================== */
 
 /* secciones */
 main {
@@ -296,12 +331,20 @@ main {
 /* ==========================================================================
    Footer
    ========================================================================== */
-.page-footer {
-  background-color: #00141d;
+
+footer li,
+footer p,
+footer {
+  font-size: 1rem;
 }
 
+
+/* .page-footer {
+  background-color: #00141d;
+} */
+
 /* footer items container */
-.page-footer {
+/* .page-footer {
   padding-top: 0px;
 }
 
@@ -309,10 +352,10 @@ main {
   padding-top: 2rem;
   padding-bottom: 2rem;
   max-width: 700px;
-}
+} */
 
 /* styles for medium and large screens */
-footer p,
+/* footer p,
 footer h5,
 footer ul {
   margin: 0;
@@ -334,9 +377,10 @@ footer ul {
   color: rgba(255, 255, 255, 0.2);
 }
 
+*/
 
 /* styles for small screens */
-@media only screen and (max-width:560px) {
+/* @media only screen and (max-width:560px) {
   .footer-items ul {
     flex-direction: column;
     align-items: center;
@@ -353,7 +397,7 @@ footer ul {
   .footer-items li i {
     display: none;
   }
-}
+} */
 
 /* footer copyright */
 .footer-copyright {
@@ -363,8 +407,6 @@ footer ul {
 /* ==========================================================================
    Cambios Materialize
    ========================================================================== */
-
-
 
 .row {
   margin-bottom: 0;
@@ -392,56 +434,6 @@ footer ul {
   margin: auto;
 }
 
-/* ==========================================================================
-   Página Desarrollo
-   ========================================================================== */
-
-.hero.secondary {
-  height: 30vh;
-}
-
-.hero.secondary i {
-  transform: translateY(5px);
-}
-
-#carousel-agrorrhh.carousel {
-  height: 500px !important;
-}
-
-#carousel-agrorrhh .carousel-item {
-  width: 500px !important;
-  height: 500px !important;
-}
-
-@media only screen and (max-width:600px) {
-  #carousel-agrorrhh.carousel {
-    height: 350px !important;
-  }
-
-  #carousel-agrorrhh .carousel-item {
-    width: 300px !important;
-    height: 300px !important;
-  }
-}
-
-#carousel-others .carousel-item {
-  width: 300px !important;
-  height: 300px !important;
-}
-
-video {
-  max-width: 100%;
-}
-
-#asesorrural .overlay {
-  width: 600px;
-  max-width: 100%;
-  margin: auto;
-}
-
-.carousel-item:not(.active) .overlay {
-  opacity: 0 !important;
-}
 
 /* ==========================================================================
    Browser Fixes
@@ -449,11 +441,8 @@ video {
 /* Firefox */
 
 @-moz-document url-prefix() {
-  .hero {
+  /* .hero {
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(/img/fondo-firefox.jpg) !important;
-  }
+  } */
 
-  .image-link .overlay {
-    background-color: rgba(0, 0, 0, 0.6);
-  }
 }
