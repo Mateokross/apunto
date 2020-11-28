@@ -16,13 +16,26 @@ $(window).on("load", function () {
     padding: 70
 
   });
-  var instance = M.Carousel.getInstance($('.carousel'));
-  setInterval(function () {
-      console.log("·");
-      instance.next();
-    }
 
-    , 3000);
+  /*autoplay*/
+  var instance = M.Carousel.getInstance($('.carousel'));
+  var play = 1;
+
+  $('.carousel').hover(function () {
+    play = false;
+  }, function () {
+    play = true;
+  });
+
+  function slide() {
+    setInterval(function () {
+      if (play) {
+        instance.next();
+      }
+    }, 4000);
+  }
+
+  slide();
 
   /* ==========================================================================
     Auto-updating year (footer)
