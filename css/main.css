@@ -184,18 +184,16 @@ ul.sidenav a:hover {
 }
 
 /*rappi button*/
-nav ul a.btn,
-ul.sidenav a.btn {
+.rappi.btn,
+.rappi.btn {
   background-color: var(--accent-color);
   color: white;
   text-transform: none;
   border-radius: 9px;
 }
 
-nav ul a.btn:hover,
-nav ul a.btn:focus,
-ul.sidenav a.btn:hover,
-ul.sidenav a.btn:focus {
+.rappi.btn:hover,
+.rappi.btn:focus {
   background-color: var(--accent-color-lighter);
   color: white;
 }
@@ -205,7 +203,7 @@ ul.sidenav a.btn:focus {
    ========================================================================== */
 
 .hero {
-  height: 70vh;
+  height: 77vh;
   /* fondo */
   background-size: cover;
   background-position: center;
@@ -267,18 +265,12 @@ ul.sidenav a.btn:focus {
   padding: 10px 0 20px 0;
 }
 
-.hero a {
-  font-size: 24px;
-  text-decoration: underline;
-  color: rgba(180, 180, 180);
-  transition: all .4s ease;
+
+@media only screen and (min-width:993px) {
+  .hero .rappi.btn {
+    display: none;
+  }
 }
-
-.hero a:hover {
-  color: rgba(255, 255, 255, 1);
-}
-
-
 
 /* ==========================================================================
    Secciones General
