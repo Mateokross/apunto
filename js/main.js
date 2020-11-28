@@ -16,7 +16,13 @@ $(window).on("load", function () {
     padding: 70
 
   });
+  var instance = M.Carousel.getInstance($('.carousel'));
+  setInterval(function () {
+      console.log("·");
+      instance.next();
+    }
 
+    , 3000);
 
   /* ==========================================================================
     Auto-updating year (footer)
