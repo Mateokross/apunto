@@ -12,8 +12,8 @@ $(window).on("load", function () {
       ========================================================================== */
   $('.carousel').carousel({
     dist: 0,
-    numVisible: 6,
-    padding: 50
+    numVisible: 13,
+    padding: 70
 
   });
 

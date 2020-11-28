@@ -182,14 +182,14 @@ nav ul a:hover {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(/img/02-small.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/img/02-small.jpg);
   /*para centering */
   display: flex;
 }
 
 @media only screen and (max-width:650px) {
   .hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(/img/02-small.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/img/02-small.jpg);
   }
 }
 
@@ -260,11 +260,14 @@ main {
 /* ==========================================================================
    Slider
    ========================================================================== */
+
+
 .slider.section {
   padding: 0;
   margin-top: 70px;
   margin-bottom: 70px;
-  /* background-color: var(--accent-color); */
+  background-color: var(--accent-color);
+  /* background-color: var(--secondary-color); */
   background-position: center;
   background-repeat: repeat;
   background-image: url(/img/pattern.png);
@@ -275,10 +278,96 @@ main {
 }
 
 
+/*V1 - Nombre adentro*/
 .carousel .carousel-item {
-  width: 230px;
-  height: 230px;
+  /* width: 250px;height: 250px; */
 }
+
+.card .card-image img,
+.card .card-image,
+.card,
+.card-title {
+  border-radius: 9px;
+}
+
+.card-title {
+  width: 100%;
+  padding: 20px;
+  text-align: left;
+  -webkit-box-shadow: inset 0px -97px 16px -30px rgba(0, 0, 0, 0.64);
+  -moz-box-shadow: inset 0px -97px 16px -30px rgba(0, 0, 0, 0.64);
+  box-shadow: inset 0px -97px 16px -30px rgba(0, 0, 0, 0.64);
+}
+
+/*V2 - Nombre abajo*/
+/* .card .card-content {
+  padding: 13px;
+}
+
+.carousel .carousel-item {
+  width: 250px;
+  height: 320px;
+}
+
+
+.card .card-content .card-title {
+  line-height: auto;
+  margin-bottom: 0;
+  font-size: 20px;
+  color: var(--accent-color);
+  font-weight: 700;
+}
+
+.card,
+.car-image,
+.card .card-image img {
+  border-radius: 0px;
+} */
+
+/* .card {
+  border-radius: 7px;
+}
+
+.car-image {
+  border-radius: 9px;
+}
+
+.card .card-image img {
+  border-radius: 7px 7px 0 0;
+} */
+
+/* Slanted div */
+/* .slanted-div {
+  position: relative;
+  padding: 200px 0;
+  overflow: visible;
+  z-index: 1;
+}
+
+.slanted-div:before,
+.slanted-div:after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: inherit;
+  z-index: -1;
+  top: 0;
+  transform-origin: left top;
+  transform: skewY(-2deg);
+}
+
+.slanted-div:after {
+  bottom: 0;
+  transform-origin: right bottom;
+  transform: skewY(-2deg);
+}
+
+.slanted-div div {
+  text-align: center;
+  font-size: 1.5em;
+  line-height: 1.5;
+} */
 
 /* ==========================================================================
    Section 3

@@ -109,8 +109,11 @@ $card-link-color-light: lighten($card-link-color, 20%) !default;
 // ==========================================================================
 
 $carousel-height: 400px !default;
-$carousel-item-height: $carousel-height / 2 !default;
+// $carousel-item-height: $carousel-height / 2 !default;
+$carousel-item-height: $carousel-height / 1.5 !default;
 $carousel-item-width: $carousel-item-height !default;
+// $carousel-item-height: 320px !default;
+// $carousel-item-width: 250px !default;
 
 
 // 6. Collapsible
