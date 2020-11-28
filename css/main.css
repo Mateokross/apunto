@@ -123,6 +123,15 @@ header nav {
   z-index: 100;
 }
 
+header {
+  height: 70px;
+  padding-bottom: 95px;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: inset 0px 84px 27px -23px rgba(0, 0, 0, 0.3);
+}
+
 @media only screen and (max-width:992px) {
   header nav {
     position: fixed !important;
@@ -135,6 +144,8 @@ header nav i {
   transform: translateX(21px);
 }
 
+/*nav on mobile*/
+
 #nav-mobile {
   padding-top: 5%;
 }
@@ -143,14 +154,10 @@ header nav i {
   text-align: center;
 }
 
-#nav-mobile h5 {
-  /* font-family: 'PT Serif', 'Source Sans Pro', sans-serif; */
-  padding-bottom: 10%
+#nav-mobile li:first-child {
+  padding-bottom: 40px;
 }
 
-#nav-mobile a {
-  font-size: 1.2rem;
-}
 
 .nav-wrapper {
   color: #fafafa;
@@ -160,16 +167,37 @@ header nav i {
   max-height: 70px;
 }
 
-nav ul a {
+/*titles*/
+
+nav ul a,
+ul.sidenav a {
   transition: all .4s ease;
 }
 
-nav ul a:hover {
+nav ul a:hover,
+ul.sidenav a:hover {
   /*removes materialize style*/
   background-color: rgba(0, 0, 0, 0);
   /*new style*/
   color: var(--accent-color);
 
+}
+
+/*rappi button*/
+nav ul a.btn,
+ul.sidenav a.btn {
+  background-color: var(--accent-color);
+  color: white;
+  text-transform: none;
+  border-radius: 9px;
+}
+
+nav ul a.btn:hover,
+nav ul a.btn:focus,
+ul.sidenav a.btn:hover,
+ul.sidenav a.btn:focus {
+  background-color: var(--accent-color-lighter);
+  color: white;
 }
 
 /* ==========================================================================
@@ -182,14 +210,14 @@ nav ul a:hover {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/img/02-small.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(/img/02-small.jpg);
   /*para centering */
   display: flex;
 }
 
 @media only screen and (max-width:650px) {
   .hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/img/02-small.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(/img/02-small.jpg);
   }
 }
 
@@ -215,6 +243,7 @@ nav ul a:hover {
   /* font-family: 'PT Serif', 'Source Sans Pro', sans-serif; */
   color: white;
   font-size: 3rem;
+  font-weight: 700;
 }
 
 .hero h5,
@@ -233,6 +262,23 @@ nav ul a:hover {
     font-size: 2rem;
   }
 }
+
+.hero h5 {
+  padding: 10px 0 20px 0;
+}
+
+.hero a {
+  font-size: 24px;
+  text-decoration: underline;
+  color: rgba(180, 180, 180);
+  transition: all .4s ease;
+}
+
+.hero a:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+
 
 /* ==========================================================================
    Secciones General
