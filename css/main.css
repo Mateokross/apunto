@@ -34,6 +34,7 @@ li {
 
 a {
   color: white;
+  transition: all .4s ease;
 }
 
 /*Color*/
@@ -197,6 +198,7 @@ ul.sidenav a:hover {
   color: white;
   text-transform: none;
   border-radius: 9px;
+  font-weight: 700;
 }
 
 .rappi.btn:hover,
@@ -344,6 +346,15 @@ main {
   box-shadow: inset 0px -97px 16px -30px rgba(0, 0, 0, 0.64);
 }
 
+.card-image {
+  box-shadow: inset 0px 0px 47px 0px rgba(0, 0, 0, 1);
+}
+
+.card-title {
+  border-radius: 8px;
+}
+
+
 /*V2 - Nombre abajo*/
 /* .card .card-content {
   padding: 13px;
@@ -448,6 +459,37 @@ main {
   }
 }
 
+/* ==========================================================================
+   FAQ Hero
+   ========================================================================== */
+
+.hero.small {
+  height: 35vh;
+}
+
+/* ==========================================================================
+   FAQ TOC
+   ========================================================================== */
+/* section.toc {
+  max-width: 600px;
+}
+
+section.toc a {
+  color: rgba(0, 0, 0, 0.87);
+  transition: all .4s ease;
+}
+
+section.toc a:hover {
+  color: var(--accent-color);
+}
+
+*/
+/* ==========================================================================
+   FAQ FAQ
+   ========================================================================== */
+section.faq p {
+  padding-bottom: 10px;
+}
 
 
 /* ==========================================================================
