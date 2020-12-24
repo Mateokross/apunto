@@ -1,14 +1,22 @@
 $(document).ready(function () {
+
+  /* ==========================================================================
+  AOS - https://michalsnik.github.io/aos/
+  ========================================================================== */
+  AOS.init({
+    offset: 300,
+    delay: 200, 
+    duration: 1800,
+    once: true
+  });
+
+
+  /* ==========================================================================
+  Materialize - materializecss.com
+  ========================================================================== */
     $('.sidenav').sidenav({
         edge: 'right'
     });
-    $('.materialboxed').materialbox();
-    $('#carousel-agrorrhh').carousel({
-        dist: -130,
-        numVisible: 3
-    });
-    $('#carousel-others').carousel({
-        dist: -30,
-        numVisible: 3
-    });
+
+
 });

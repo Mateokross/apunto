@@ -140,12 +140,12 @@ header nav {
 }
 
 header {
-  height: 70px;
+  height: 90px;
   padding-bottom: 95px;
   position: fixed;
   width: 100%;
   z-index: 1000;
-  box-shadow: inset 0px 84px 27px -23px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0px 90px 27px -23px rgba(0, 0, 0, 0.4);
 }
 
 @media only screen and (max-width:992px) {
@@ -179,8 +179,13 @@ header nav i {
   color: #fafafa;
 }
 
+nav .brand-logo {
+  height: 90px;
+}
+
 .brand-logo img {
-  max-height: 70px;
+  height: 90px;
+  padding: 15px 0;
 }
 
 /*titles*/
@@ -188,6 +193,13 @@ header nav i {
 nav ul a,
 ul.sidenav a {
   transition: all .4s ease;
+
+}
+
+nav ul a,
+nav ul li,
+nav .sidenav-trigger i {
+  line-height: 90px;
 }
 
 nav ul a:hover,
@@ -225,14 +237,14 @@ ul.sidenav a:hover {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(/img/02-small.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(/img/hero-01.jpg);
   /*para centering */
   display: flex;
 }
 
 @media only screen and (max-width:650px) {
   .hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(/img/02-small.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(/img/hero-01.jpg);
   }
 }
 
@@ -322,10 +334,11 @@ main {
   margin-top: 70px;
   margin-bottom: 70px;
   /* background-color: var(--accent-color); */
-  background-color: var(--secondary-color);
-  /* background-position: center; */
-  /* background-repeat: repeat; */
-  /* background-image: url(/img/pattern.png); */
+  /* background-color: var(--secondary-color); */
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../img/carousel-bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .carousel .carousel-item {
