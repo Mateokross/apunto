@@ -541,6 +541,10 @@ footer {
   font-size: 1rem;
 }
 
+footer li {
+  margin-bottom: 8px;
+}
+
 
 /* .page-footer {
   background-color: #00141d;
