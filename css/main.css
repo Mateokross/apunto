@@ -140,7 +140,7 @@ header nav {
 }
 
 header {
-  height: 90px;
+  height: 107px;
   padding-bottom: 95px;
   position: fixed;
   width: 100%;
@@ -376,77 +376,6 @@ main {
   border-radius: 8px;
 }
 
-
-/*V2 - Nombre abajo*/
-/* .card .card-content {
-  padding: 13px;
-}
-
-.carousel .carousel-item {
-  width: 250px;
-  height: 320px;
-}
-
-
-.card .card-content .card-title {
-  line-height: auto;
-  margin-bottom: 0;
-  font-size: 20px;
-  color: var(--accent-color);
-  font-weight: 700;
-}
-
-.card,
-.car-image,
-.card .card-image img {
-  border-radius: 0px;
-} */
-
-/* .card {
-  border-radius: 7px;
-}
-
-.car-image {
-  border-radius: 9px;
-}
-
-.card .card-image img {
-  border-radius: 7px 7px 0 0;
-} */
-
-/* Slanted div */
-/* .slanted-div {
-  position: relative;
-  padding: 200px 0;
-  overflow: visible;
-  z-index: 1;
-}
-
-.slanted-div:before,
-.slanted-div:after {
-  content: '';
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  background: inherit;
-  z-index: -1;
-  top: 0;
-  transform-origin: left top;
-  transform: skewY(-2deg);
-}
-
-.slanted-div:after {
-  bottom: 0;
-  transform-origin: right bottom;
-  transform: skewY(-2deg);
-}
-
-.slanted-div div {
-  text-align: center;
-  font-size: 1.5em;
-  line-height: 1.5;
-} */
-
 /* ==========================================================================
    Section 3
    ========================================================================== */
@@ -534,6 +463,9 @@ section.faq p {
 /* ==========================================================================
    Footer
    ========================================================================== */
+.page-footer>.container {
+  padding-bottom: 20px;
+}
 
 footer li,
 footer p,
@@ -544,67 +476,6 @@ footer {
 footer li {
   margin-bottom: 8px;
 }
-
-
-/* .page-footer {
-  background-color: #00141d;
-} */
-
-/* footer items container */
-/* .page-footer {
-  padding-top: 0px;
-}
-
-.footer-items {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  max-width: 700px;
-} */
-
-/* styles for medium and large screens */
-/* footer p,
-footer h5,
-footer ul {
-  margin: 0;
-  margin-bottom: .3rem;
-}
-
-.footer-items a {
-  font-size: 1.1rem;
-  color: white;
-}
-
-.footer-items ul {
-  display: flex;
-  justify-content: space-around;
-}
-
-.footer-items li i {
-  font-size: 8px;
-  color: rgba(255, 255, 255, 0.2);
-}
-
-*/
-
-/* styles for small screens */
-/* @media only screen and (max-width:560px) {
-  .footer-items ul {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .footer-items li {
-    padding-bottom: .4rem;
-  }
-
-  .footer-items a {
-    font-size: 1.3rem !important;
-  }
-
-  .footer-items li i {
-    display: none;
-  }
-} */
 
 /* footer copyright */
 .footer-copyright {
