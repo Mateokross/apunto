@@ -155,9 +155,9 @@ header {
 }
 
 header nav i {
-  text-shadow: 0 0 7px rgba(0, 0, 0, 0.6);
-  font-size: 31px !important;
-  transform: translateX(21px);
+  font-size: 27px;
+  height: 90px !important;
+  line-height: 90px !important;
 }
 
 /*nav on mobile*/
