@@ -160,8 +160,6 @@ header nav i {
   line-height: 90px !important;
 }
 
-
-
 /*nav on mobile*/
 
 #nav-mobile {
@@ -188,13 +186,6 @@ nav .brand-logo {
 .brand-logo img {
   height: 90px;
   padding: 15px 0;
-}
-
-#nav-mobile i {
-  float: none;
-  margin: 0;
-  font-size: 27px;
-  color: rgba(0, 0, 0, 0.87);
 }
 
 /*titles*/
@@ -544,10 +535,6 @@ footer {
 
 footer li {
   margin-bottom: 8px;
-}
-
-footer i {
-  font-size: 27px;
 }
 
 /* footer copyright */
