@@ -15,6 +15,7 @@
   background: var(--accent-color-lighter);
 }
 
+
 /*Font*/
 @font-face {
   font-family: "Odin-Bold";
@@ -354,9 +355,6 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  background: black;
-}
 
 .arrow {
   position: absolute;
@@ -416,6 +414,7 @@ body {
    Secciones General
    ========================================================================== */
 
+body,
 main {
   background-color: #fafafa;
 
@@ -489,10 +488,6 @@ main {
 /* ==========================================================================
    Section 3
    ========================================================================== */
-
-#section-3 {
-  padding-bottom: 140px;
-}
 
 #section-3 h4 {
   padding-bottom: 3rem;
@@ -626,8 +621,8 @@ footer i {
 }
 
 .section {
-  padding-top: 70px;
-  padding-bottom: 70px;
+  margin-top: 140px;
+  margin-bottom: 140px;
 }
 
 @media only screen and (max-width:901px) {
