@@ -220,9 +220,9 @@ ul.sidenav a:hover {
 
 }
 
-/*rappi button*/
-.rappi.btn,
-.rappi.btn {
+/*pedidosya button*/
+.pedidosya.btn,
+.pedidosya.btn {
   background-color: var(--accent-color);
   color: white !important;
   text-transform: none;
@@ -230,8 +230,8 @@ ul.sidenav a:hover {
   font-weight: 700;
 }
 
-.rappi.btn:hover,
-.rappi.btn:focus {
+.pedidosya.btn:hover,
+.pedidosya.btn:focus {
   background-color: var(--accent-color-lighter);
   color: white;
 }
@@ -243,37 +243,41 @@ ul.sidenav a:hover {
 .hero {
   height: 100vh;
   /* fondo */
+  background: black;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(/img/hero-01.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(/img/hero-01.jpg);
   /*para centering */
   display: flex;
 }
 
-@media only screen and (max-width:650px) {
-  .hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(/img/hero-01.jpg);
-  }
+
+/*Hero Animation*/
+.hero .darken.active {
+  background: black;
 }
 
 .hero>div {
-  /* -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px); */
   width: 100%;
   display: flex;
 }
 
-.hero>div.blur {
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
-}
-
 .hero .container {
   margin: auto;
-  padding-top: 10vh;
 }
 
+.hero .container .content {
+  margin: auto;
+  text-align: center;
+  max-width: 720px;
+  width: 95%;
+}
+
+.hero img {
+  padding-bottom: 2rem;
+  max-width: 300px;
+}
 
 .hero h1 {
   margin: 0;
@@ -281,12 +285,13 @@ ul.sidenav a:hover {
   color: white;
   font-size: 3rem;
   font-weight: 700;
+  text-transform: uppercase;
 }
 
-.hero h5,
+/* .hero h5,
 .hero i {
   color: rgba(255, 255, 255, 0.9);
-}
+} */
 
 @media only screen and (min-width:600px) {
   .hero .half-width {
@@ -306,7 +311,7 @@ ul.sidenav a:hover {
 
 
 @media only screen and (min-width:993px) {
-  .hero .rappi.btn {
+  .hero .pedidosya.btn {
     display: none;
   }
 }
@@ -503,6 +508,11 @@ main {
 .hero.small {
   height: 35vh;
 }
+
+.hero.small .container {
+  padding-top: 10vh;
+}
+
 
 /* ==========================================================================
    FAQ TOC
