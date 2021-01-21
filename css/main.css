@@ -16,6 +16,12 @@
 }
 
 /*Font*/
+@font-face {
+  font-family: "Odin-Bold";
+  src: url('../fonts/odin-bold.otf')
+}
+
+
 h1,
 h2,
 h3,
@@ -140,12 +146,12 @@ header nav {
 }
 
 header {
-  height: 107px;
-  padding-bottom: 95px;
+  height: 115px;
+  padding-bottom: 99px;
   position: fixed;
   width: 100%;
   z-index: 1000;
-  box-shadow: inset 0px 90px 27px -23px rgba(0, 0, 0, 0.4);
+  box-shadow: inset 0px 90px 33px -22px rgba(0, 0, 0, 0.4);
 }
 
 @media only screen and (max-width:992px) {
@@ -160,7 +166,10 @@ header nav i {
   line-height: 90px !important;
 }
 
-
+header nav .brand-logo {
+  opacity: 0;
+  transition: all .4s ease;
+}
 
 /*nav on mobile*/
 
@@ -188,6 +197,7 @@ nav .brand-logo {
 .brand-logo img {
   height: 90px;
   padding: 15px 0;
+
 }
 
 #nav-mobile i {
@@ -221,7 +231,7 @@ ul.sidenav a:hover {
 }
 
 /*pedidosya button*/
-.pedidosya.btn,
+
 .pedidosya.btn {
   background-color: var(--accent-color);
   color: white !important;
@@ -234,6 +244,10 @@ ul.sidenav a:hover {
 .pedidosya.btn:focus {
   background-color: var(--accent-color-lighter);
   color: white;
+}
+
+.hero .pedidosya.btn {
+  margin-top: 2rem;
 }
 
 /* ==========================================================================
@@ -277,11 +291,12 @@ ul.sidenav a:hover {
 .hero img {
   padding-bottom: 2rem;
   max-width: 300px;
+  width: 80%;
 }
 
 .hero h1 {
   margin: 0;
-  /* font-family: 'PT Serif', 'Source Sans Pro', sans-serif; */
+  font-family: 'Odin-Bold', 'Montserrat', sans-serif;
   color: white;
   font-size: 3rem;
   font-weight: 700;

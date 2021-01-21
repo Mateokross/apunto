@@ -112,7 +112,22 @@ $(window).on("load", function () {
     "background": "black"
   });
 
+  /* ==========================================================================
+    Auto-updating year (footer)
+    ========================================================================== */
+    var logo = $("header nav .brand-logo")
+    var win = $(window);
+    var winH = win.height();   // Get the window height.
 
+    win.on("scroll", function () {
+        if ($(this).scrollTop() > winH ) {
+            logo.css("opacity", "1");
+        } else {
+          logo.css("opacity", "0");
+        }
+    }).on("resize", function(){ // If the user resizes the window
+       winH = $(this).height(); // you'll need the new height value
+    });
 
   /* ==========================================================================
     Auto-updating year (footer)
