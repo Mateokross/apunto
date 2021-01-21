@@ -65,7 +65,6 @@ a:hover {
 
 
 
-
 /* ==========================================================================
    Preloader
    ========================================================================== */
@@ -495,30 +494,46 @@ main {
   padding-bottom: 140px;
 }
 
-
-
-@media only screen and (min-width:901px) {
-  #section-3 .row {
-    display: flex;
-  }
-
-  #section-3 .col {
-    flex: 1;
-  }
-
-  #section-3 .col:first-child {
-    padding-right: 50px;
-  }
-
-  #section-3 .col:last-child {
-    padding-left: 50px;
-  }
+#section-3 h4 {
+  padding-bottom: 3rem;
 }
 
 @media only screen and (max-width:900px) {
-  #section-3 .col:last-child {
-    padding-top: 80px;
+  #section-3 h4 {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
   }
+}
+
+
+ol.instructions {
+  counter-reset: my-awesome-counter;
+  list-style: none;
+  padding-left: 40px;
+}
+
+ol.instructions li {
+  margin: 0 0 2.5rem 0;
+  padding-top: 6px;
+  counter-increment: my-awesome-counter;
+  position: relative;
+}
+
+ol.instructions li::before {
+  content: counter(my-awesome-counter);
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  position: absolute;
+  --size: 41px;
+  left: calc(-1 * var(--size) - 10px);
+  line-height: var(--size);
+  width: var(--size);
+  height: var(--size);
+  top: 0;
+  background: var(--accent-color);
+  border-radius: 50%;
+  text-align: center;
 }
 
 /* ==========================================================================
