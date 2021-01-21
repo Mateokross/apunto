@@ -53,33 +53,43 @@ $(window).on("load", function () {
   /* ==========================================================================
     Rotating Hero
     ========================================================================== */
-  //variables
-  rotateInterval = 8000; //time between rotations in ms
-  backgrounds = ['hero-01.jpg', 'hero-02.jpg', 'hero-03.jpg']; //filenames
-  imgDirectory = "../img/"; // from css file location
-  bgCounter = 0;
-  timeBlack = 1000 //in ms
+  //custom variables
+  var rotateInterval = 8000; //time between rotations in ms
+  var transitionTime = 800 //transition time in ms
+  var backgrounds = ['hero-01.jpg', 'hero-02.jpg', 'hero-03.jpg']; //filenames
+  var imgDirectory = "../img/"; // image directory  from css file location
 
-  //debug
-  counter=0;
-  setInterval(function(){
-    counter +=1;
-    console.log(counter);
-},1000);
+
+  //add css for darkening bg
+  $(".hero.rotating .darken").css({
+    "transition": "all "+ transitionTime/2 +"ms linear"
+  });
   
-  //run function every x miliseconds
+  //run function every x miliseconds (rotate interval)
    setInterval(function(){
-    bgDarken()//darken
+
+    //darken
+    bgDarken()
+    heroRotate();
+
     //wait some time and change image
     setTimeout(function(){
       bgRotate();
-    },timeBlack/2);
-    //wait some more and remove dark
+    },transitionTime/2);
+
+    //wait some more and remove darkened overlay
     setTimeout(function(){
       bgDarken();
-    },timeBlack);
+    },transitionTime);
+
   },rotateInterval);
 
+
+
+  //Functions
+
+  //Rotate Background
+  var bgCounter = 0; 
   function bgRotate(){
     //change bgCounter
     if(bgCounter == backgrounds.length - 1){
@@ -93,37 +103,47 @@ $(window).on("load", function () {
 
     //apply css
     $(".hero.rotating").css("background-image",cssBg);
-    console.log("bg rotated");
-  
+
   }
 
-
+  //darken Background
   function bgDarken(){
     //apply css
     $(".hero.rotating .darken").toggleClass("active");
-    console.log("bg darken toggled");
   }
 
-  //add css
-  $(".hero.rotating .darken").css({
-    "transition": "all "+ timeBlack/2 +"ms linear"
-  });
-  $(".hero.rotating .darken.active").css({
-    "background": "black"
-  });
+  //get hero phrases
+  var heroPhrase = $("#hero-phrase");
+  var headers = $("#hero-phrases h1").toArray();
+  var phrases = [];
+  headers.forEach(header => phrases.push(header.innerHTML));
+
+  //rotate Hero Text
+  function heroRotate(){
+    //rotate through headers
+    heroPhrase.fadeOut(transitionTime,function(){
+      $(this).text(phrases[bgCounter]).fadeIn(transitionTime);
+    });
+    console.log(phrases[bgCounter]);
+  }
+
+
 
   /* ==========================================================================
-    Auto-updating year (footer)
+    Change header on scroll
     ========================================================================== */
-    var logo = $("header nav .brand-logo.show-on-scroll")
+    var logo = $("header nav .brand-logo.show-on-scroll");
+    var nav = $("header nav");
     var win = $(window);
     var winH = win.height();   // Get the window height.
 
     win.on("scroll", function () {
         if ($(this).scrollTop() > winH ) {
             logo.css("opacity", "1");
+            nav.removeClass("wide");
         } else {
           logo.css("opacity", "0");
+          nav.addClass("wide");
         }
     }).on("resize", function(){ // If the user resizes the window
        winH = $(this).height(); // you'll need the new height value

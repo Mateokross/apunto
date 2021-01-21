@@ -34,7 +34,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link href="css/main.css?v=0.4.2" type="text/css" rel="stylesheet" media="screen,projection" />
-  <!-- <link rel="stylesheet" href="styles/debug.css"> -->
+  <!-- <link rel="stylesheet" href="css/debug.css"> -->
 </head>
 
 <body class="loading">
@@ -56,7 +56,7 @@
       <li><a href="https://www.pedidosya.com.ar/" class="btn pedidosya" target="_blank" rel="noreferrer">Pedir en Pedidos Ya</a></li>
     </ul>
 
-    <nav class=" transparent z-depth-0" role="navigation">
+    <nav class="transparent z-depth-0 wide" role="navigation">
       <div class="nav-wrapper container">
         <a href="index.html" class="brand-logo show-on-scroll"><img src="img/logo-blanco.svg" alt="Bravo logo"></a>
         <ul class="right hide-on-med-and-down">
@@ -78,7 +78,12 @@
         <div class="container">
           <div class="content" data-aos="fade-up">
             <img src="img/logo-alto-sin-texto.svg" alt="Bravo Logo">
-            <h1>Carne como debe ser</h1>
+            <h1><span id="hero-phrase">Carne como debe ser</span></h1>
+            <div style="display: none;" id="hero-phrases">
+              <h1>Carne como debe ser</h1>
+              <h1>Sin moverte de tu casa</h1>
+              <h1>Cuando vos lo queres</h1>
+            </div>
             <a href="https://www.pedidosya.com.ar/" class="btn pedidosya" target="_blank" rel="noreferrer">Pedir en Pedidos Ya</a>
           </div>
         </div>
@@ -92,7 +97,7 @@
       <div class="row" data-aos="fade-up">
         <div class="col s12 m6 l6 valign-wrapper">
           <h4>¿Quienes Somos?</h4>
-          <p>Bravo, Red de Carnes busca revolucionar el mercado de Carnicerías mediante la creación de una marca que solo comercialice por vía Online, siendo nuestra misión masificar la compra de carnes por este medio.</p>
+          <p>Bravo, carne al toque, es un emprendimiento joven, que llega con un concepto diferente en innovador en el mundo de las carnes. Nos posicionamos como una carnicería online que busca revolucionar el mercado de carne. Aspiramos a crear una nueva experiencia de compra, acercándole al consumidor un producto de calidad, de manera practica e inmediata.</p>
         </div>
         <div class="col s12 m6 l6 center ">
           <img class="responsive-img" width="400px" src="img/quienes-somos.jpeg" alt="Nosotros">
@@ -216,6 +221,7 @@
     integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="js/materialize.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
   <script src="js/main.js?v=0.4.2"></script>
 
 </body>
