@@ -6,6 +6,23 @@ $(window).on("load", function () {
   $(".preloader").fadeOut(400);
   $("body").removeClass("loading");
 
+
+  /* ==========================================================================
+   Init Lozad - https://css-tricks.com/lozad-js-performant-lazy-loading-images/
+   ========================================================================== */
+  const observer = lozad(); // lazy loads elements with default selector as ".lozad"
+  observer.observe();
+
+
+  //load slider images asap
+  var pics = document.getElementsByClassName("lozad");
+  console.log(pics);
+
+  for (var i=0, max=pics.length; i < max; i++) {
+    // console.log(pics.item(i));
+    observer.triggerLoad(pics.item(i));
+  }
+
   /* ==========================================================================
   AOS - https://michalsnik.github.io/aos/
   ========================================================================== */
@@ -28,7 +45,6 @@ $(window).on("load", function () {
     dist: 0,
     numVisible: 13,
     padding: 70
-
   });
 
   /*autoplay*/
