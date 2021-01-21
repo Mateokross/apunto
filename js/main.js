@@ -115,7 +115,7 @@ $(window).on("load", function () {
   /* ==========================================================================
     Auto-updating year (footer)
     ========================================================================== */
-    var logo = $("header nav .brand-logo")
+    var logo = $("header nav .brand-logo.show-on-scroll")
     var win = $(window);
     var winH = win.height();   // Get the window height.
 
