@@ -60,15 +60,18 @@ li {
 a {
   color: white;
   transition: all .4s ease;
+  outline: 0;
 }
 
 
-a:hover {
+a:hover,
+a:focus {
   color: var(--accent-color);
 }
 
-body {
-  min-height: 100vh;
+/*for big screens*/
+main {
+  min-height: calc(100vh - 275px);
 }
 
 
