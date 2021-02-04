@@ -11,6 +11,10 @@
   --footer-color: #4c4e56;
 }
 
+::-moz-selection {
+  background: var(--accent-color-lighter);
+}
+
 ::selection {
   background: var(--accent-color-lighter);
 }
@@ -525,8 +529,6 @@ main {
   max-width: 100%;
   padding: 24px;
   margin: 0;
-  -webkit-box-shadow: inset 10px -68px 24px 0px rgba(0, 0, 0, 0.64);
-  -moz-box-shadow: inset 10px -68px 24px 0px rgba(0, 0, 0, 0.64);
   box-shadow: inset 10px -68px 24px 0px rgba(0, 0, 0, 0.64);
 }
 
@@ -535,8 +537,6 @@ main {
 }
 
 .card-title-container.double-shadow {
-  -webkit-box-shadow: inset 10px -92px 30px 0px rgba(0, 0, 0, 0.64);
-  -moz-box-shadow: inset 10px -92px 30px 0px rgba(0, 0, 0, 0.64);
   box-shadow: inset 10px -92px 30px 0px rgba(0, 0, 0, 0.64);
 }
 

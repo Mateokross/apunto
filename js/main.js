@@ -17,7 +17,7 @@ $(window).on("load", function () {
   //load slider images asap
   var pics = document.getElementsByClassName("lozad");
 
-  for (var i=0, max=pics.length; i < max; i++) {
+  for (var i = 0, max = pics.length; i < max; i++) {
     observer.triggerLoad(pics.item(i));
   }
 
@@ -26,7 +26,7 @@ $(window).on("load", function () {
   ========================================================================== */
   AOS.init({
     offset: 300,
-    delay: 200, 
+    delay: 200,
     duration: 1800,
     once: true
   });
@@ -38,14 +38,14 @@ $(window).on("load", function () {
 
   //sidenav
   $('.sidenav').sidenav({
-      edge: 'right'
+    edge: 'right'
   });
 
   //acordion
   $('.collapsible').collapsible();
 
 
-  $('.collapsible-header').on("click", function () { 
+  $('.collapsible-header').on("click", function () {
     //define icons
     var openIcon = '<i class="fas fa-angle-down"></i>'
     var closeIcon = '<i class="fas fa-angle-up"></i>'
@@ -59,15 +59,15 @@ $(window).on("load", function () {
 
 
     //switch selected sign
-    if(symbol == openIcon){
+    if (symbol == openIcon) {
       selector.html(closeIcon);
-    }else{
+    } else {
       selector.html(openIcon);
     }
 
   });
 
-  
+
 
   //carousel
   $('.carousel').carousel({
@@ -77,16 +77,16 @@ $(window).on("load", function () {
   });
 
   /*autoplay*/
-  if ($('.carousel').length){
+  if ($('.carousel').length) {
     var instance = M.Carousel.getInstance($('.carousel'));
     var play = 1;
-  
+
     $('.carousel').hover(function () {
       play = false;
     }, function () {
       play = true;
     });
-  
+
     function slide() {
       setInterval(function () {
         if (play) {
@@ -94,7 +94,7 @@ $(window).on("load", function () {
         }
       }, 4000);
     }
-  
+
     slide();
   }
 
@@ -112,52 +112,53 @@ $(window).on("load", function () {
 
   //add css for darkening bg
   $(".hero.rotating .darken").css({
-    "transition": "all "+ transitionTime/2 +"ms linear"
+    "transition": "all " + transitionTime / 2 + "ms linear"
   });
-  
+
   //run function every x miliseconds (rotate interval)
-   setInterval(function(){
+  setInterval(function () {
 
     //darken
     bgDarken()
     heroRotate();
 
     //wait some time and change image
-    setTimeout(function(){
+    setTimeout(function () {
       bgRotate();
-    },transitionTime/2);
+    }, transitionTime / 2);
 
     //wait some more and remove darkened overlay
-    setTimeout(function(){
+    setTimeout(function () {
       bgDarken();
-    },transitionTime);
+    }, transitionTime);
 
-  },rotateInterval);
+  }, rotateInterval);
 
 
 
   //Functions
 
   //Rotate Background
-  var bgCounter = 0; 
-  function bgRotate(){
+  var bgCounter = 0;
+
+  function bgRotate() {
     //change bgCounter
-    if(bgCounter == backgrounds.length - 1){
+    if (bgCounter == backgrounds.length - 1) {
       bgCounter = 0;
-    }else{
+    } else {
       bgCounter += 1;
     }
-    
+
     //css property
-    cssBg = "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url("+ imgDirectory + backgrounds[bgCounter] + ")"
+    cssBg = "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url(" + imgDirectory + backgrounds[bgCounter] + ")"
 
     //apply css
-    $(".hero.rotating").css("background-image",cssBg);
+    $(".hero.rotating").css("background-image", cssBg);
 
   }
 
   //darken Background
-  function bgDarken(){
+  function bgDarken() {
     //apply css
     $(".hero.rotating .darken").toggleClass("active");
   }
@@ -169,9 +170,9 @@ $(window).on("load", function () {
   headers.forEach(header => phrases.push(header.innerHTML));
 
   //rotate Hero Text
-  function heroRotate(){
+  function heroRotate() {
     //rotate through headers
-    heroPhrase.fadeOut(transitionTime,function(){
+    heroPhrase.fadeOut(transitionTime, function () {
       $(this).text(phrases[bgCounter]).fadeIn(transitionTime);
     });
   }
@@ -181,30 +182,30 @@ $(window).on("load", function () {
   /* ==========================================================================
     Change header on scroll
     ========================================================================== */
-    var logo = $("header nav .brand-logo.show-on-scroll");
-    var nav = $("header nav");
-    var win = $(window);
+  var logo = $("header nav .brand-logo.show-on-scroll");
+  var nav = $("header nav");
+  var win = $(window);
 
-    if(nav.hasClass("small-hero")){
-      var winH = win.height() * 0.35;   // smaller window height for smaller hero
+  if (nav.hasClass("small-hero")) {
+    var winH = win.height() * 0.35; // smaller window height for smaller hero
 
-    }else{
-      var winH = win.height();   // Get the window height.
+  } else {
+    var winH = win.height(); // Get the window height.
+  }
+
+
+
+  win.on("scroll", function () {
+    if ($(this).scrollTop() > winH) {
+      logo.css("opacity", "1");
+      nav.removeClass("wide");
+    } else {
+      logo.css("opacity", "0");
+      nav.addClass("wide");
     }
-
-
-
-    win.on("scroll", function () {
-        if ($(this).scrollTop() > winH ) {
-            logo.css("opacity", "1");
-            nav.removeClass("wide");
-        } else {
-          logo.css("opacity", "0");
-          nav.addClass("wide");
-        }
-    }).on("resize", function(){ // If the user resizes the window
-       winH = $(this).height(); // you'll need the new height value
-    });
+  }).on("resize", function () { // If the user resizes the window
+    winH = $(this).height(); // you'll need the new height value
+  });
 
   /* ==========================================================================
     Auto-updating year (footer)
