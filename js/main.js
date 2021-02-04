@@ -100,17 +100,13 @@ $(window).on("load", function () {
 
 
 
-
-
-
-
   /* ==========================================================================
     Rotating Hero
     ========================================================================== */
   //custom variables
   var rotateInterval = 3500; //time between rotations in ms
   var transitionTime = 800 //transition time in ms
-  var backgrounds = ['hero-01.jpg', 'hero-02.jpg', 'hero-03.jpg']; //filenames
+  var backgrounds = ['hero-01-min.jpg', 'hero-02-min.jpg', 'hero-03-min.jpg']; //filenames
   var imgDirectory = "../img/"; // image directory  from css file location
 
 
