@@ -175,7 +175,7 @@ header nav .nav-wrapper {
 nav .sidenav-trigger i {
   height: 56px;
   line-height: 56px;
-  font-size: 3rem;
+  font-size: 3rem !important;
 }
 
 header nav .brand-logo.show-on-scroll {
@@ -200,6 +200,14 @@ header nav .brand-logo.show-on-scroll {
   padding-bottom: 40px;
 }
 
+#nav-mobile .socials {
+  display: flex;
+  justify-content: center;
+}
+
+#nav-mobile .socials a {
+  padding: 0 7px
+}
 
 .nav-wrapper {
   color: #fafafa;
@@ -208,6 +216,11 @@ header nav .brand-logo.show-on-scroll {
 nav .brand-logo {
   height: 90px;
 }
+
+nav.wide .brand-logo {
+  margin-left: 15px;
+}
+
 
 .brand-logo img {
   height: 90px;
@@ -234,6 +247,11 @@ nav ul a,
 nav ul li,
 nav .sidenav-trigger i {
   line-height: 90px;
+}
+
+nav .nav-wrapper i {
+  line-height: 90px !important;
+  font-size: 26px;
 }
 
 nav ul a:hover,
@@ -318,10 +336,7 @@ ul.sidenav a:hover {
   text-transform: uppercase;
 }
 
-/* .hero h5,
-.hero i {
-  color: rgba(255, 255, 255, 0.9);
-} */
+
 
 @media only screen and (min-width:600px) {
   .hero .half-width {
@@ -430,10 +445,37 @@ main {
   }
 }
 
+
+.valign-row-l,
+.valign-row-m {
+  display: flex;
+  align-items: center;
+}
+
+@media only screen and (max-width:992px) {
+  .valign-row-l {
+    display: block;
+  }
+
+  .valign-row-l div.col:last-child {
+    padding-top: 2rem;
+  }
+}
+
+@media only screen and (max-width:600px) {
+  .valign-row-m {
+    display: block;
+  }
+}
+
 /* ==========================================================================
    Slider
    ========================================================================== */
-
+.slider h4 {
+  text-align: center;
+  color: white;
+  transform: translateY(40px);
+}
 
 .slider.section {
   padding: 0;
@@ -445,6 +487,7 @@ main {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  height: auto;
 }
 
 .carousel .carousel-item {
@@ -482,6 +525,10 @@ main {
   -webkit-box-shadow: inset 10px -68px 24px 0px rgba(0, 0, 0, 0.64);
   -moz-box-shadow: inset 10px -68px 24px 0px rgba(0, 0, 0, 0.64);
   box-shadow: inset 10px -68px 24px 0px rgba(0, 0, 0, 0.64);
+}
+
+.card .card-image .card-title {
+  padding: 15px 24px;
 }
 
 .card-title-container.double-shadow {
@@ -572,37 +619,55 @@ ol.instructions li::before {
   padding-top: 10vh;
 }
 
-
-/* ==========================================================================
-   FAQ TOC
-   ========================================================================== */
-/* section.toc {
-  max-width: 600px;
-}
-
-section.toc a {
-  color: rgba(0, 0, 0, 0.87);
-  transition: all .4s ease;
-}
-
-section.toc a:hover {
-  color: var(--accent-color);
-}
-
-*/
 /* ==========================================================================
    FAQ FAQ
    ========================================================================== */
-section.faq p {
-  padding-bottom: 10px;
+section.faq {
+  margin-top: 70px;
+  margin-bottom: 70px;
 }
 
+.collapsible {
+  box-shadow: none;
+  border-radius: 9px;
+}
+
+.collapsible li:first-child .collapsible-header {
+  border-radius: 9px 9px 0 0;
+}
+
+.collapsible li:last-child:not(.active) .collapsible-header,
+.collapsible li:last-child .collapsible-body {
+  border-radius: 0 0 9px 9px;
+}
+
+
+
+
+.collapsible-header {
+  background-color: #fafafa;
+  transition: background-color .4s ease, color .4s ease;
+  font-size: 1.6rem;
+}
+
+
+.collapsible li:hover .collapsible-header {
+  background-color: #f5f5f5;
+}
+
+.collapsible li:hover .collapsible-header {
+  color: var(--accent-color);
+}
+
+.collapsible-header span {
+  transition: color .4s ease;
+}
 
 /* ==========================================================================
    Footer
    ========================================================================== */
 .page-footer>.container {
-  padding-bottom: 20px;
+  padding-bottom: 30px;
 }
 
 footer li,
@@ -612,11 +677,36 @@ footer {
 }
 
 footer li {
-  margin-bottom: 8px;
+  margin-bottom: 11px;
 }
 
 footer i {
   font-size: 27px;
+}
+
+@media only screen and (max-width:992px) {
+  footer>div.container div.col {
+    padding-bottom: 20px;
+  }
+}
+
+
+/*socials*/
+
+.page-footer .socials {
+  display: flex;
+}
+
+.page-footer .socials a:first-child {
+  padding-right: 14px;
+}
+
+
+/*pedidos ya*/
+
+footer .pedidosya.btn {
+  box-shadow: none;
+
 }
 
 /* footer copyright */
@@ -624,8 +714,11 @@ footer i {
   background-color: rgba(0, 0, 0, 0.18) !important;
 }
 
+
+
+
 /* ==========================================================================
-   Cambios Materialize
+   Cambios generales Materialize
    ========================================================================== */
 
 .row {
@@ -652,6 +745,21 @@ footer i {
 .responsive-img {
   display: block;
   margin: auto;
+}
+
+#section-1,
+#section-3 {
+  margin-top: 0;
+  padding-top: calc(140px + 1rem);
+}
+
+@media only screen and (max-width: 901px) {
+
+  #section-1,
+  #section-3 {
+    margin-top: 0;
+    padding-top: calc(70px + 1rem);
+  }
 }
 
 

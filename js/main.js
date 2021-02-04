@@ -16,10 +16,8 @@ $(window).on("load", function () {
 
   //load slider images asap
   var pics = document.getElementsByClassName("lozad");
-  console.log(pics);
 
   for (var i=0, max=pics.length; i < max; i++) {
-    // console.log(pics.item(i));
     observer.triggerLoad(pics.item(i));
   }
 
@@ -37,10 +35,41 @@ $(window).on("load", function () {
   /* ==========================================================================
   Materialize - materializecss.com
   ========================================================================== */
-    $('.sidenav').sidenav({
-        edge: 'right'
-    });
 
+  //sidenav
+  $('.sidenav').sidenav({
+      edge: 'right'
+  });
+
+  //acordion
+  $('.collapsible').collapsible();
+
+
+  $('.collapsible-header').on("click", function () { 
+    //define icons
+    var openIcon = '<i class="fas fa-angle-down"></i>'
+    var closeIcon = '<i class="fas fa-angle-up"></i>'
+
+    //save variables
+    var selector = $(this).children('span');
+    var symbol = selector.html();
+
+    //put everything on +
+    $('.collapsible-header span').html(openIcon);
+
+
+    //switch selected sign
+    if(symbol == openIcon){
+      selector.html(closeIcon);
+    }else{
+      selector.html(openIcon);
+    }
+
+  });
+
+  
+
+  //carousel
   $('.carousel').carousel({
     dist: 0,
     numVisible: 13,
@@ -48,29 +77,38 @@ $(window).on("load", function () {
   });
 
   /*autoplay*/
-  var instance = M.Carousel.getInstance($('.carousel'));
-  var play = 1;
-
-  $('.carousel').hover(function () {
-    play = false;
-  }, function () {
-    play = true;
-  });
-
-  function slide() {
-    setInterval(function () {
-      if (play) {
-        instance.next();
-      }
-    }, 4000);
+  if ($('.carousel').length){
+    var instance = M.Carousel.getInstance($('.carousel'));
+    var play = 1;
+  
+    $('.carousel').hover(function () {
+      play = false;
+    }, function () {
+      play = true;
+    });
+  
+    function slide() {
+      setInterval(function () {
+        if (play) {
+          instance.next();
+        }
+      }, 4000);
+    }
+  
+    slide();
   }
 
-  slide();
+
+
+
+
+
+
   /* ==========================================================================
     Rotating Hero
     ========================================================================== */
   //custom variables
-  var rotateInterval = 8000; //time between rotations in ms
+  var rotateInterval = 3500; //time between rotations in ms
   var transitionTime = 800 //transition time in ms
   var backgrounds = ['hero-01.jpg', 'hero-02.jpg', 'hero-03.jpg']; //filenames
   var imgDirectory = "../img/"; // image directory  from css file location
@@ -140,7 +178,6 @@ $(window).on("load", function () {
     heroPhrase.fadeOut(transitionTime,function(){
       $(this).text(phrases[bgCounter]).fadeIn(transitionTime);
     });
-    console.log(phrases[bgCounter]);
   }
 
 
@@ -151,7 +188,15 @@ $(window).on("load", function () {
     var logo = $("header nav .brand-logo.show-on-scroll");
     var nav = $("header nav");
     var win = $(window);
-    var winH = win.height();   // Get the window height.
+
+    if(nav.hasClass("small-hero")){
+      var winH = win.height() * 0.35;   // smaller window height for smaller hero
+
+    }else{
+      var winH = win.height();   // Get the window height.
+    }
+
+
 
     win.on("scroll", function () {
         if ($(this).scrollTop() > winH ) {
