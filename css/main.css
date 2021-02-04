@@ -63,6 +63,9 @@ a:hover {
   color: var(--accent-color);
 }
 
+body {
+  min-height: 100vh;
+}
 
 
 
