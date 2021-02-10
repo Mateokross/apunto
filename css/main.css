@@ -167,7 +167,7 @@ header {
 /*Fixes for long header*/
 @media only screen and (max-width:1150px) {
   nav ul a {
-    padding: 0 11px;
+    padding: 0 7px;
   }
 
   body>header>nav>div>ul>li:nth-child(5)>a>i,
