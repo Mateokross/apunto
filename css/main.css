@@ -164,6 +164,20 @@ header {
   box-shadow: inset 0px 90px 33px -22px rgba(0, 0, 0, 0.4);
 }
 
+/*Fixes for long header*/
+@media only screen and (max-width:1150px) {
+  nav ul a {
+    padding: 0 11px;
+  }
+
+  body>header>nav>div>ul>li:nth-child(5)>a>i,
+  body>header>nav>div>ul>li:nth-child(4)>a>i {
+    display: none;
+  }
+
+}
+
+
 @media only screen and (max-width:992px) {
   header nav {
     position: fixed !important;
@@ -227,8 +241,10 @@ nav .brand-logo {
   height: 90px;
 }
 
-nav.wide .brand-logo {
-  margin-left: 15px;
+@media only screen and (max-width:600px) {
+  nav.wide .brand-logo {
+    margin-left: 15px;
+  }
 }
 
 
@@ -443,12 +459,6 @@ main {
 
 @media only screen and (min-width:901px) {
 
-  /* cambia el orden de los items */
-  /* #section-2 .row {
-    display: flex;
-    flex-direction: row-reverse;
-  } */
-
   /* centra los textos verticalmente */
   .col.s12.m6.l6.valign-wrapper {
     min-height: 430px;
@@ -491,8 +501,6 @@ main {
   padding: 0;
   margin-top: 70px;
   margin-bottom: 70px;
-  /* background-color: var(--accent-color); */
-  /* background-color: var(--secondary-color); */
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../img/carousel-bg.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -504,11 +512,6 @@ main {
   opacity: 1 !important;
 }
 
-
-/*V1 - Nombre adentro*/
-.carousel .carousel-item {
-  /* width: 250px;height: 250px; */
-}
 
 .card-image {
   box-shadow: inset 0px 0px 47px 0px rgba(0, 0, 0, 1);
@@ -549,7 +552,6 @@ main {
 
 
 
-
 /* ==========================================================================
    Section 3
    ========================================================================== */
@@ -565,6 +567,11 @@ main {
   }
 }
 
+@media only screen and (max-width:600px) {
+  #section-3 img {
+    width: 50%;
+  }
+}
 
 ol.instructions {
   counter-reset: my-awesome-counter;
@@ -696,11 +703,19 @@ footer i {
   }
 }
 
+.footer-text {
+  margin-bottom: 0;
+}
 
 /*socials*/
+.page-footer a.email {
+  font-weight: bold;
+  opacity: 0.8;
+}
 
 .page-footer .socials {
   display: flex;
+  margin-top: 10px;
 }
 
 .page-footer .socials a:first-child {
@@ -766,17 +781,4 @@ footer .pedidosya.btn {
     margin-top: 0;
     padding-top: calc(70px + 1rem);
   }
-}
-
-
-/* ==========================================================================
-   Browser Fixes
-   ========================================================================== */
-/* Firefox */
-
-@-moz-document url-prefix() {
-  /* .hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(/img/fondo-firefox.jpg) !important;
-  } */
-
 }
