@@ -1,0 +1,32 @@
+[X] Header más oscuro
+[X] Cmbiar rappi por pedidos ya
+[X] cambiar hero para que este el logo y un titulo centrado
+[X] 3 fondos que van cambiando en hero
+[X] 3 frases que cambien con el fondo
+[X] Agregar paso a paso
+[X] Meter fotos cortes
+[X] Armar media para sharing
+[X] hacer que esté alejado y se acerque el contenido del header en scroll
+
+[X] meter screen de app
+[X] Terminar textos
+[X] Descripción para google
+[X] image optimizations
+[X] XML Sitemap
+[X] Lighthouse
+[X] validate markup
+[X] check console
+
+[X] testing on other browsers
+[X] adapt css to other browsers
+[X] minify
+[X] htaccess
+
+[X] Hosting
+
+[  ] meter link pedidosya
+[  ] meter link facebook
+
+[X] google analytics
+[X] Mail
+[X] Cambiar texto quienes somos
