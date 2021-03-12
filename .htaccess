@@ -1,3 +1,9 @@
+#RewriteEngine on
+
+#RewriteCond %{HTTPS} off
+#RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+#Options -indexes
+
 ErrorDocument 404 /404.html
 
 # compress text, html, javascript, css, xml:
@@ -16,9 +22,21 @@ AddOutputFilterByType DEFLATE application/x-javascript
 SetOutputFilter DEFLATE
 </files>
 
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php71” package as the default “PHP” programming language.
+#<IfModule mime_module>
+ # AddType application/x-httpd-ea-php71 .php .php7 .phtml
+#</IfModule>
+# php -- END cPanel-generated handler, do not edit
 
-#force https
+#hide extensions
+
 RewriteEngine On
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
 
+
+#https
+RewriteEngine On 
+RewriteCond %{HTTPS} off 
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
