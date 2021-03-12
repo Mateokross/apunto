@@ -1,7 +1,0 @@
-
----
-deployment:
-  tasks:
-    - export DEPLOYPATH=/home/mateokro/test.mateokrossler.com/
-    - /bin/cp -R * $DEPLOYPATH
-    
