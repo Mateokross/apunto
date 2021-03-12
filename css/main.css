@@ -165,13 +165,14 @@ header {
 }
 
 /*Fixes for long header*/
-@media only screen and (max-width:1150px) {
+@media only screen and (max-width:1210px) {
   nav ul a {
     padding: 0 7px;
   }
 
-  body>header>nav>div>ul>li:nth-child(5)>a>i,
-  body>header>nav>div>ul>li:nth-child(4)>a>i {
+  body>header>nav>div>ul>li:nth-child(1)>a>i,
+  body>header>nav>div>ul>li:nth-child(2)>a>i,
+  body>header>nav>div>ul>li:nth-child(3)>a>i {
     display: none;
   }
 
@@ -603,6 +604,72 @@ ol.instructions li::before {
   text-align: center;
 }
 
+
+/* ==========================================================================
+   Video
+   ========================================================================== */
+.screen-container {
+  display: block;
+  margin: auto;
+  width: 100%;
+  max-width: 250px;
+  position: relative;
+}
+
+.screen-content {
+  width: 100%;
+  transform: scale(0.895) translateY(3px);
+  border-radius: 50px;
+}
+
+.screen-content video {
+  width: 100%;
+}
+
+.screen-container .overlay {
+  position: absolute;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(../img/mockup-empty-small-min.png);
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+/* ==========================================================================
+   Contact
+   ========================================================================== */
+.contact.section {
+  background-color: #eaeaea;
+  margin-bottom: 0;
+  padding: 60px 0;
+}
+
+.contact.section a {
+  color: rgba(0, 0, 0, 0.87);
+  font-weight: 700;
+  transition: color .4s ease;
+}
+
+.contact.section a:hover {
+  color: var(--accent-color) !important;
+}
+
+.contact.section .email {
+  padding: 20px 0;
+  font-size: 1.4rem;
+}
+
+.contact.section .email a {
+  color: rgba(50, 50, 50, 0.87);
+}
+
+
+
+
+
 /* ==========================================================================
    Other tabs
    ========================================================================== */
@@ -718,7 +785,8 @@ footer i {
   margin-top: 10px;
 }
 
-.page-footer .socials a:first-child {
+.page-footer .socials a:nth-child(1),
+.page-footer .socials a:nth-child(2) {
   padding-right: 14px;
 }
 
