@@ -165,7 +165,7 @@ header {
 }
 
 /*Fixes for long header*/
-@media only screen and (max-width:1210px) {
+@media only screen and (max-width:1266px) {
   nav ul a {
     padding: 0 7px;
   }
@@ -177,7 +177,6 @@ header {
   }
 
 }
-
 
 @media only screen and (max-width:992px) {
   header nav {
@@ -207,8 +206,6 @@ header nav .brand-logo.show-on-scroll {
   opacity: 0;
   transition: all .4s ease;
 }
-
-
 
 
 /*nav on mobile*/
@@ -536,7 +533,7 @@ main {
   max-width: 100%;
   padding: 24px;
   margin: 0;
-  box-shadow: inset 10px -68px 24px 0px rgba(0, 0, 0, 0.64);
+  box-shadow: inset 0px -69px 53px 0 rgba(0, 0, 0, 0.64);
 }
 
 .card .card-image .card-title {
@@ -544,7 +541,7 @@ main {
 }
 
 .card-title-container.double-shadow {
-  box-shadow: inset 10px -92px 30px 0px rgba(0, 0, 0, 0.64);
+  box-shadow: inset 0px -90px 39px 0 rgba(0, 0, 0, 0.64);
 }
 
 .card-title-container.double-shadow span {
